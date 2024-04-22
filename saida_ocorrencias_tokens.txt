@@ -1,0 +1,9 @@
+tk_( |--> 2
+tk_imprima |--> 2
+tk_float |--> 1
+tk_cadeia |--> 1
+tk_id |--> 1
+tk_<= |--> 1
+tk_: |--> 1
+tk_fim_rotina |--> 1
+tk_enquanto |--> 1
