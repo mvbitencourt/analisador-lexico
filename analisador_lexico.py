@@ -1,7 +1,7 @@
 # Tabela de transições do automato
 tabela = [#   0   1   2  3  4   5   6   7   8   9   10  11  12  13  14  15  16  17  18  19  20  21  22  23                                           
           #  chm chM dig .  "   #   >   <   =   /   &   %   *   +   ~   -   (   )   :    x  _   e   \n  " "
-            [36, 28, 1,  21,32, 66, 43, 42, 41, 65, 64, 63, 62, 60, 59, 55, 71, 73, 75, -1, -1, 36, -1, -1], #estado 0
+            [36, 28, 1,  21,32, 66, 43, 42, 41, 65, 64, 63, 62, 60, 59, 55, 71, 73, 75, 36, -1, 36, -1, -1], #estado 0
             [-1, -1, 2,  4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 26, -1, 29, -1, -1, 26, 26], #estado 1
             [-1, -1, 3,  4, -1, -1, -1, -1, -1, 5,  -1, -1, -1, -1, -1, -1, -1, 26, -1, -1, 6,  -1, 26, 26], #estado 2 
             [-1, -1, 27, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 26, -1, -1, -1, -1, 26, 26], #estado 3
@@ -299,8 +299,8 @@ def main():
                 estado_novo = verifica_proximo_estado(estado_atual, tipo_caractere) # Verifica e atribui o proximo estado ao ler o caractere atual
                 estado_atual = estado_novo # Atribui à estado atual o proximo estado
                 
-                if estado_aux == 78 and tipo_caractere == 79:
-                    index_coluna_arquivo_aux = index_coluna_arquivo
+                if estado_aux == 78 and tipo_caractere == 79: # Se estado anterior foi o 78 e o caractere foi uma quebra de linha
+                    index_coluna_arquivo_aux = index_coluna_arquivo # Salva coluna do arquivo para utilizar nos casos de comentário de bloco com quebra de linha
                 
                 print('Estado atual: ' + str(estado_aux))
                 print('Proximo estado: ' + str(estado_novo))
