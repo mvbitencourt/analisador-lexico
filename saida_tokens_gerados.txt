@@ -1,12 +1,12 @@
-Linha: 5 | Coluna: 3 | tk_enquanto |--> enquanto
-Linha: 5 | Coluna: 12 | tk_id |--> nUm
-Linha: 5 | Coluna: 16 | tk_<= |--> <=
-Linha: 5 | Coluna: 19 | tk_float |--> .09e-123:
-Linha: 5 | Coluna: 26 | tk_: |--> :
-Linha: 6 | Coluna: 7 | tk_imprima |--> imprima
-Linha: 6 | Coluna: 12 | tk_( |--> (
-Linha: 7 | Coluna: 4 | tk_imprima |--> imprima
-Linha: 7 | Coluna: 9 | tk_( |--> (
-Linha: 7 | Coluna: 11 | tk_cadeia |--> "Fim prog"
-Linha: 8 | Coluna: 0 | tk_fim_rotina |--> fim_rotina
-
+Linha: 0 | Coluna: 0 | tk_comentariolinha |--> # Ex-02-incorreto.cic
+Linha: 2 | Coluna: 0 | tk_rotina |--> rotina
+Linha: 3 | Coluna: 4 | tk_imprima |--> imprima
+Linha: 3 | Coluna: 9 | tk_( |--> (
+Linha: 5 | Coluna: 7 | tk_<== |--> <==
+Linha: 5 | Coluna: 11 | tk_data |--> 11/11/2000
+Linha: 5 | Coluna: 22 | tk_+ |--> +
+Linha: 6 | Coluna: 4 | tk_imprima |--> imprima
+Linha: 6 | Coluna: 9 | tk_( |--> (
+Linha: 6 | Coluna: 11 | tk_end |--> Ax23423
+Linha: 6 | Coluna: 17 | tk_) |--> )
+Linha: 7 | Coluna: 0 | tk_fim_rotina |--> fim_rotina

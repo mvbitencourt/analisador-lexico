@@ -1,9 +1,8 @@
-[0 ] <<< Ex-03-incorreto.cic 
+[0 ] # Ex-02-incorreto.cic
 [1 ] 
 [2 ] rotina
-[3 ]    leia(<a>) |--> Erro na linha: 3 colunas: 10 | (contagem de colunas inicia em 0)
-[4 ] >>> |--> Erro na linha: 4 colunas: 0 | (contagem de colunas inicia em 0)
-[5 ]    enquanto nUm <= .09e-123:
-[6 ]       imprima(99/12_1999) |--> Erro na linha: 6 colunas: 18 | (contagem de colunas inicia em 0)
-[7 ]    imprima("Fim prog"rama") 	 |--> Erro na linha: 7 colunas: 24, 27 | (contagem de colunas inicia em 0)
-[8 ] fim_rotina
+[3 ]    imprima("Digite um  |--> Erro na linha: 3 colunas: 21 | (contagem de colunas inicia em 0)
+[4 ]    nro") |--> Erro na linha: 4 colunas: 5 | (contagem de colunas inicia em 0)
+[5 ]    NuM <== 11/11/2000 + 11_11_20 |--> Erro na linha: 5 colunas: 3, 31 | (contagem de colunas inicia em 0)
+[6 ]    imprima(Ax23423)
+[7 ] fim_rotina
