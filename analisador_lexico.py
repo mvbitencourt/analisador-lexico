@@ -314,15 +314,15 @@ def main():
                         if cadeia_atual_aux in palavras_reservadas: # Verifica se a cadeia está na lista de palavras reservadas
                             index_palavra_reservada = palavras_reservadas.index(cadeia_atual_aux)
                             token_gerado = tokens_cadeias_reservadas[index_palavra_reservada] # Gera o token para a palavra reservada específica
-                            if tipo_caractere == 73:
+                            if tipo_caractere == 73: # Se o caractere atual é uma abertura de parentese 
                                 cadeia_atual = cadeia_atual_aux
-                        else:
-                            token_valido = False
+                        else: # Se não está na lista de palavras reservadas
+                            token_valido = False # Token não é válido
                     
-                    if token_valido == True:
+                    if token_valido == True:# Se Token é válido
                         tokens_gerados.append(token_gerado) # O token gerado é atribuido a uma lista de tokens gerados, para ser feito o controle de quantidade de tokens de cada tipo
                         if token_gerado == tokens[24]: # Se o token gerado é o de comentario em bloco
-                            if '\n' in cadeia_atual:
+                            if '\n' in cadeia_atual: # Se tem quebra de linha no comentário
                                 cadeia_atual_aux = cadeia_atual.split('\n')[0]
                                 tamanho_cadeia = len(cadeia_atual_aux)
                                 index_cadeia_inicial = (index_coluna_arquivo_aux-1) - (tamanho_cadeia - 1)
@@ -344,12 +344,12 @@ def main():
                             if tipo_caractere == 73: # Se caractere foi uma abertura de parentese
                                 cadeia_atual = cadeia_atual + str(caractere)
                                 estado_atual = verifica_proximo_estado(0, tipo_caractere)
-                                if estado_atual in estados_aceitacao:
+                                if estado_atual in estados_aceitacao: # Se estado atual é aceitação
                                     token_gerado = tokens[estados_aceitacao.index(estado_atual)]
                                     tokens_gerados.append(token_gerado)
                                     imprimir_arquivo_saida('saida_tokens_gerados.txt', 'Linha: ' + str(index_linha_arquivo) + ' | Coluna: ' + str(index_coluna_arquivo) + ' | ' + token_gerado + ' |--> ' + str(''.join(cadeia_atual)) + '\n')
                                 cadeia_atual = '' # Reseta a cadeia atual
-                                estado_atual = 0
+                                estado_atual = 0  # Reseta o estado atual
                         else:
                             if (tipo_caractere == 74 or tipo_caractere == 75 ) and estado_atual not in estados_aceitacao_independentes: # Caso o caractere lido seja um fechamento de parentese ou dois pontos e o estado atual não está na lista de estados de aceitação independentes
                                 cadeia_atual = cadeia_atual + str(caractere)
@@ -386,7 +386,7 @@ def main():
                             if cadeia_atual in palavras_reservadas:
                                 index_palavra_reservada = palavras_reservadas.index(cadeia_atual)
                                 token_gerado = tokens_cadeias_reservadas[index_palavra_reservada]
-                            else:
+                            else: # Se palavra não está na lista de palavras reservadas
                                 token_valido = False
                         
                         if token_valido == True:
@@ -408,8 +408,8 @@ def main():
     
     quant_todos_tokens = []
     quant_todos_tokens = tokens # Cria copia da lista de tokens possiveis de serem gerados
-    quant_todos_tokens.pop()
-    quant_todos_tokens.extend(tokens_cadeias_reservadas)
+    quant_todos_tokens.pop() #Retira ultimo elemento da lista, que é o "tk_palavrareservada"
+    quant_todos_tokens.extend(tokens_cadeias_reservadas) # No lugar de "tk_palavra reservada", coloca os tokens de cada palavra resevada válida
     quant_todos_tokens = adiciona_colunas_em_lista_tokens(quant_todos_tokens) # Adiciona coluna na lista, tornando-a uma tabela
     quant_todos_tokens = contar_ocorrencias(quant_todos_tokens, tokens_gerados) # Conta quantas vezes cada tipo de token aparece na tabela e atribui o valor ao respectivo token
     quant_todos_tokens = ordenar_quantidade_tokens(quant_todos_tokens) # Ordena tabela em ordem decrescente de ocorrências
