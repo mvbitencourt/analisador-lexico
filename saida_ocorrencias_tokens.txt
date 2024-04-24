@@ -5,5 +5,6 @@ tk_comentariolinha |--> 1
 tk_end |--> 1
 tk_+ |--> 1
 tk_) |--> 1
+tk_<== |--> 1
 tk_rotina |--> 1
 tk_fim_rotina |--> 1

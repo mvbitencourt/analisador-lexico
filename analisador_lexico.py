@@ -89,7 +89,7 @@ tabela = [#   0   1   2  3  4   5   6   7   8   9   10  11  12  13  14  15  16  
           ]
 
 # lista de estados de aceitação
-estados_aceitacao = [16, 17, 25, 26, 31, 34, 39, 40, 44, 45, 47, 49, 55, 57, 58, 59, 60, 62, 63, 64, 65, 71, 73, 75, 81, 84, 48]
+estados_aceitacao = [16, 17, 25, 26, 31, 34, 39, 40, 44, 45, 47, 49, 55, 57, 58, 59, 60, 62, 63, 64, 65, 71, 73, 75, 81, 48, 84]
 
 # lista de estados de aceitação para cadeias que não precisam de um caractere fora do escopo do seu token para gerar o token
 estados_aceitacao_independentes = [34, 44, 49, 55, 57, 59, 60, 62, 63, 64, 65, 71, 73, 75, 81, 48]
@@ -121,8 +121,8 @@ tokens = [
           'tk_)',                 # 73
           'tk_:',                 # 75
           'tk_comentariobloco',   # 81
-          'tk_palavrareservada',  # 84
           'tk_<==',               # 48
+          'tk_palavrareservada',  # 84
         ]
 
 # Lista de caracteres reconhecidos pela linguagem
@@ -308,7 +308,7 @@ def main():
                 if estado_atual in estados_aceitacao: # Se o estado que fomos ao ler o caractere for um estado de aceitação da lista de estados de aceitação acima...
                     token_gerado = tokens[estados_aceitacao.index(estado_atual)] # ... então, é gerado o token correspondente à aquele estado de aceitação (os indices das duas listas de tokens e estados de aceitação são correspondentes)
                     token_gerado_aux = token_gerado
-                    if token_gerado == tokens[25]: # Caso o token gerado tenha sido de palavra reservada
+                    if token_gerado == tokens[26]: # Caso o token gerado tenha sido de palavra reservada
                         cadeia_atual_aux = cadeia_atual[:-1]
                         print( 'PALAVRA RESERVADA: ' + cadeia_atual_aux )
                         if cadeia_atual_aux in palavras_reservadas: # Verifica se a cadeia está na lista de palavras reservadas
@@ -340,7 +340,7 @@ def main():
                         
                         cadeia_atual = '' # Reseta a cadeia atual
                         
-                        if token_gerado_aux == tokens[25]: # Se token gerado foi uma palavra reservada
+                        if token_gerado_aux == tokens[26]: # Se token gerado foi uma palavra reservada
                             if tipo_caractere == 73: # Se caractere foi uma abertura de parentese
                                 cadeia_atual = cadeia_atual + str(caractere)
                                 estado_atual = verifica_proximo_estado(0, tipo_caractere)
@@ -381,7 +381,7 @@ def main():
                     estado_atual = estado_novo # Estado atual recebe proximo estado
                     if estado_atual in estados_aceitacao: # Se o novo estado for aceitação...
                         token_gerado = tokens[estados_aceitacao.index(estado_atual)] #... O token é gerado,
-                        if token_gerado == tokens[25]:
+                        if token_gerado == tokens[26]: # Se token for de palavra reservada
                             print( 'PALAVRA RESERVADA: ' + cadeia_atual )
                             if cadeia_atual in palavras_reservadas:
                                 index_palavra_reservada = palavras_reservadas.index(cadeia_atual)
@@ -394,14 +394,14 @@ def main():
                             
                             print('Token: ' + token_gerado) # Mostra qual o token gerado
                             
-                            estado_atual = 0 # Reseta o automato para o estado 0
                             tamanho_cadeia = len(cadeia_atual) # Salva tamanho da cadeia atual
                             index_cadeia_inicial = index_coluna_arquivo - (tamanho_cadeia - 1) # Salva a coluna do indice inicial da cadeia atual
                             # Imprime no arquivo saída o token gerado com sua respectiva cadeia, linha e coluna
                             imprimir_arquivo_saida('saida_tokens_gerados.txt', 'Linha: ' + str(index_linha_arquivo) + ' | Coluna: ' + str(index_cadeia_inicial + 1) + ' | ' +token_gerado + ' |--> ' + str(''.join(cadeia_atual)) + '\n')
                             cadeia_atual = '' # Reseta cadeia atual
+                            estado_atual = 0 # Reseta o automato para o estado 0
                             
-                        token_valido = True
+                        token_valido = True # Reseta status token_valido
                     else: # Se o novo estado não for aceitação...
                         tabela_erros.append([index_linha_arquivo, index_coluna_arquivo]) # Registra linha e coluna do erro
                 index_coluna_arquivo += 1 # Incrementa o indice da coluna que está sendo lida
