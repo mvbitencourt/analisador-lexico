@@ -317,6 +317,7 @@ def main():
                             if tipo_caractere == 73: # Se o caractere atual é uma abertura de parentese 
                                 cadeia_atual = cadeia_atual_aux
                         else: # Se não está na lista de palavras reservadas
+                            tabela_erros.append([index_linha_arquivo, index_coluna_arquivo])
                             token_valido = False # Token não é válido
                     
                     if token_valido == True:# Se Token é válido
