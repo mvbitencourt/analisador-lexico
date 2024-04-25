@@ -1,8 +1,8 @@
-# Ex-02-incorreto.cic
+# Ex-01-correto.cic
 
 rotina
-   imprima("Digite um 
-   nro")
-   NuM <== 11/11/2000 + 11_11_20
-   imprima(Ax23423)
+   imprima("Digite um nro")
+   leia(nUmErO)
+   nUm <== nUm <> 123 
+   imprima(123.e10) 	
 fim_rotina

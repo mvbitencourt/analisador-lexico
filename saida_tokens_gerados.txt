@@ -1,12 +1,20 @@
-Linha: 0 | Coluna: 0 | tk_comentariolinha |--> # Ex-02-incorreto.cic
+Linha: 0 | Coluna: 0 | tk_comentariolinha |--> # Ex-01-correto.cic
 Linha: 2 | Coluna: 0 | tk_rotina |--> rotina
 Linha: 3 | Coluna: 4 | tk_imprima |--> imprima
 Linha: 3 | Coluna: 9 | tk_( |--> (
+Linha: 3 | Coluna: 11 | tk_cadeia |--> "Digite um nro"
+Linha: 3 | Coluna: 26 | tk_) |--> )
+Linha: 4 | Coluna: 4 | tk_leia |--> leia
+Linha: 4 | Coluna: 6 | tk_( |--> (
+Linha: 4 | Coluna: 8 | tk_id |--> nUmErO
+Linha: 4 | Coluna: 13 | tk_) |--> )
+Linha: 5 | Coluna: 3 | tk_id |--> nUm
 Linha: 5 | Coluna: 7 | tk_<== |--> <==
-Linha: 5 | Coluna: 11 | tk_data |--> 11/11/2000
-Linha: 5 | Coluna: 22 | tk_+ |--> +
+Linha: 5 | Coluna: 11 | tk_id |--> nUm
+Linha: 5 | Coluna: 15 | tk_<> |--> <>
+Linha: 5 | Coluna: 18 | tk_int |--> 123
 Linha: 6 | Coluna: 4 | tk_imprima |--> imprima
 Linha: 6 | Coluna: 9 | tk_( |--> (
-Linha: 6 | Coluna: 11 | tk_end |--> Ax23423
+Linha: 6 | Coluna: 11 | tk_float |--> 123.e10
 Linha: 6 | Coluna: 17 | tk_) |--> )
 Linha: 7 | Coluna: 0 | tk_fim_rotina |--> fim_rotina

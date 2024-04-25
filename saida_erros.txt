@@ -1,8 +1,8 @@
-[0 ] # Ex-02-incorreto.cic
+[0 ] # Ex-01-correto.cic
 [1 ] 
 [2 ] rotina
-[3 ]    imprima("Digite um  |--> Erro na linha: 3 colunas: 21 | (contagem de colunas inicia em 0)
-[4 ]    nro") |--> Erro na linha: 4 colunas: 5 | (contagem de colunas inicia em 0)
-[5 ]    NuM <== 11/11/2000 + 11_11_20 |--> Erro na linha: 5 colunas: 3, 31 | (contagem de colunas inicia em 0)
-[6 ]    imprima(Ax23423)
+[3 ]    imprima("Digite um nro")
+[4 ]    leia(nUmErO)
+[5 ]    nUm <== nUm <> 123 
+[6 ]    imprima(123.e10) 	 |--> Erro na linha: 6 colunas: 19 | (contagem de colunas inicia em 0)
 [7 ] fim_rotina
