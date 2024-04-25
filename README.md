@@ -1,4 +1,4 @@
-# Analisador Léxico para Compiladores
+# Analisador Léxico
 
 ## Descrição
 Este repositório contém um analisador léxico implementado em Python, projetado para identificar e classificar tokens a partir de uma entrada de código-fonte conforme definido por uma tabela de transições de estados. O analisador utiliza um Autômato Finito Determinístico (DFA) para processar a entrada e identificar tokens como identificadores, palavras-chave, literais numéricos, operadores e delimitadores.
