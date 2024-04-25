@@ -1,0 +1,28 @@
+Expressões regulares:
+
+    TK_INT: [0-9]+
+    TK_FLOAT: ( [0-9] | Ɛ)( [0-9] | Ɛ )( [0-9] | Ɛ ) . [0-9]+ ( ( e ( - |  Ɛ ) [0-9]+ ) | [0-9]+ )
+    TK_DATA: [0-9][0-9] ( ( “-” [0-9][0-9]  “-” ) | ( “/” [0-9][0-9] “/” ) ) [0-9][0-9][0-9][0-9] 
+    TK_END: ( [0-9] | [A-Z] ) x ( [0-9]* [A-Z]* )+ 
+    TK_CADEIA: ”(qualquer coisa)“
+    TK_ID: ( [a-z][A-Z] )+ ( [a-z] | [a-z][A-Z] )*
+    TK_COMENTARIOLINHA: #[qualquer coisa]*
+    TK_COMENTARIOBLOCO: <<< [qualquer coisa]* >>>
+    TK_PALAVRARESERVADA: [a-z][a-z][a-z]*
+    TK_-: -
+    TK_~: ~
+    TK_+: +
+    TK_*: *
+    TK_%: %
+    TK_&: &
+    TK_|: |
+    TK_<>: <>
+    TK_==: ==
+    TK_>=: >=
+    TK_<=: <=
+    TK_>: >
+    TK_<: <
+    TK_<==: <==
+    TK_: : :
+    TK_( : (
+    TK_) : )
