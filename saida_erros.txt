@@ -3,6 +3,6 @@
 [2 ] rotina
 [3 ]    imprima("Digite um nro")
 [4 ]    leia(nUmErO)
-[5 ]    nUm <== nUm <> 123 
-[6 ]    imprima(123.e10) 	 |--> Erro na linha: 6 colunas: 19 | (contagem de colunas inicia em 0)
+[5 ]    nUm <== nUm <> 123
+[6 ]    imprima(123.e10)
 [7 ] fim_rotina
